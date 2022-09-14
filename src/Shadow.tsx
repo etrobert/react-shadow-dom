@@ -11,9 +11,11 @@ const Shadow = ({ children }: Props) => {
   const [shadowRoot, setShadowRoot] = useState<ShadowRoot | null>(null);
 
   useEffect(() => {
-    if (ref.current?.shadowRoot) return;
-    const shadowRoot = ref.current?.attachShadow({ mode: 'open' });
-    setShadowRoot(shadowRoot ?? null);
+    if (ref.current === null) return;
+    // If the Shadow DOM is already attached we do nothing
+    if (ref.current.shadowRoot === null) return;
+    const shadowRoot = ref.current.attachShadow({ mode: 'open' });
+    setShadowRoot(shadowRoot);
   }, []);
 
   return (
