@@ -19,6 +19,7 @@ const Shadow = ({ children }: Props) => {
   }, []);
 
   return (
+    // TODO: Find a way not to require systematically adding a `div` element
     <div ref={ref}>
       {shadowRoot && ReactDOM.createPortal(children, shadowRoot)}
     </div>
