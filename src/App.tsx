@@ -1,11 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+// TODO: Update webpack loader to import from App.css and not App.css.ts
+import style from './App.css';
 import Shadow from './Shadow';
 
 function App() {
   return (
     <Shadow>
+      { /* TODO: Consider other ways to inject style */}
+      <style>{style}</style>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />

@@ -1,4 +1,4 @@
-.App {
+const style = `.App {
   text-align: center;
 }
 
@@ -36,3 +36,6 @@
     transform: rotate(360deg);
   }
 }
+`;
+
+export default style;
